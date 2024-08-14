@@ -20,7 +20,7 @@ public class JWTUtils {
     private final SecretKey Key;
 
     public JWTUtils() {
-        String secretString = "84367894651321849845165TREJ4896S455616SD8G49SD1R65YS849489498415112000980460SDSGD948408456DS987QA456414980K41561AFASD9843544984853168T4415156O48";
+        String secretString = "843567893696976453275974432697R634976R738467TR678T34865R6834R8763T478378637664538745673865783678548735687R3";
         byte[] keyBytes = Base64.getDecoder().decode(secretString.getBytes(StandardCharsets.UTF_8));
         this.Key = new SecretKeySpec(keyBytes, "HmacSHA256");
     }
@@ -48,6 +48,6 @@ public class JWTUtils {
     }
 
     private boolean isTokenExpired(String token) {
-        return extractClaims(token, Clamis::getExpiration).before(new Date());
+        return extractClaims(token, Claims::getExpiration).before(new Date());
     }
 }
