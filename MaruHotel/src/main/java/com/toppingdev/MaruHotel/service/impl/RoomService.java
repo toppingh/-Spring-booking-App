@@ -139,7 +139,7 @@ public class RoomService implements IRoomService {
     }
 
     @Override
-    public Response getRoombyId(Long roomId) {
+    public Response getRoomById(Long roomId) {
         Response response = new Response();
 
         try {

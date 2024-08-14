@@ -19,9 +19,10 @@ public interface IRoomService {
 
     Response updateRoom(MultipartFile photo, Long roomId, String roomType, BigDecimal roomPrice, String description);
 
-    Response getRoombyId(Long roomId);
+    Response getRoomById(Long roomId);
 
     Response getAvailableRoomByDataAndType(LocalDate checkInDate, LocalDate checkOutDate, String roomType);
 
     Response getAllAvailableRooms();
+
 }

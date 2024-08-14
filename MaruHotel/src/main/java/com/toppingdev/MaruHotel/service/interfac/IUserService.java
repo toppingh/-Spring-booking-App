@@ -7,7 +7,7 @@ import com.toppingdev.MaruHotel.entity.User;
 public interface IUserService {
 
     Response register(User user);
-    Response register(LoginRequest loginRequest);
+    Response login(LoginRequest loginRequest);
     Response getAllUsers();
     Response getUserBookingHistory(String userId);
     Response deleteUser(String userId);
