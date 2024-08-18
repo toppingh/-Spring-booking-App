@@ -81,6 +81,26 @@ public class RoomController {
             return ResponseEntity.status(response.getStatusCode()).body(response);
         }
 
+        LocalDate today = LocalDate.now();
+
+        // Check if the checkInDate is in the past
+        if (checkInDate.isBefore(today)) {
+            Response response = new Response();
+            response.setStatusCode(400);
+            response.setMessage("Check-in date cannot be in the past");
+            return ResponseEntity.status(response.getStatusCode()).body(response);
+        }
+
+        // Check if the checkOutDate is before the checkInDate
+        if (checkOutDate.isBefore(today)) {
+            Response response = new Response();
+            response.setStatusCode(400);
+            response.setMessage("Check-out date cannot be before check-in date");
+            return ResponseEntity.status(response.getStatusCode()).body(response);
+        }
+
+
+
         Response response = roomService.getAvailableRoomByDataAndType(checkInDate, checkOutDate, roomType);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }

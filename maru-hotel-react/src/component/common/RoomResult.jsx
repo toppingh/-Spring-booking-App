@@ -7,7 +7,7 @@ const RoomResult = ({ roomSearchResults }) => {
     const navigate = useNavigate();
     const isAdmin = ApiService.isAdmin();
     return (
-        <section className="room-resulsts">
+        <section className="room-results">
             {roomSearchResults && roomSearchResults.length > 0 && (
                 <div className="room-list">
                     {roomSearchResults.map(room => (
