@@ -120,7 +120,7 @@ export default class ApiService {
     }
 
     // Updates a room
-    static async updateRoom(roomId) {
+    static async updateRoom(roomId, formData) {
         const result = await axios.put(`${this.BASE_URL}/rooms/upadate/${roomId}`, formData, {
             headers: {
                 ...this.getHeader(),

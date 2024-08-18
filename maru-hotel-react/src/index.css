@@ -1,13 +1,331 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, sans-serif;
+  color: #999;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.colors {
+    color: pink;
+    color: #FF007F;
+    color: #CC0066;
+    color: #319055;
+    color: #003366;
+    color: #36454F;
+    color: #007F86;
+    color: #007F86;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 70px 25px 75px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+.navbar-brand a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007F86;
+  text-decoration: none;
+}
+
+.navbar-ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navbar-ul li {
+  margin-left: 20px;
+}
+
+.navbar-ul li a {
+  text-decoration: none;
+  color: #666;
+  transition: color 0.5s;
+}
+
+.navbar-ul li a:hover {
+  color: #FF007F;
+  color: #FF7F50;
+}
+
+.navbar-ul li a.active {
+  color: #FF7F50;
+}
+
+.auth-container {
+  max-width: 400px;
+  padding: 20px;
+  border: 0.5px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  margin: 20px auto 50px auto;
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #007F86;
+}
+
+.register-link {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.register-link a {
+  color: #007F86;
+  text-decoration: none;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+/* Login Css End */
+
+/* Registration Page */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  width: 95%;
+  padding: 12px;
+  background-color: #007F86;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 800;
+  border-radius: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: rgb(34, 80, 128)
+}
+/* Registration Page End */
+
+/* NavBar Stylling */
+.link-button {
+  background-color: #007F86;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+/* NavBar Styling End */
+
+/* Footer Styling */
+.my-footer {
+  color: #d8d2d2;
+  background-color: #444;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-weight: 500;
+}
+
+/* HomePage Styling */
+.home {
+  margin-bottom: 100px;
+}
+
+/* Header */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.overlay-content {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  justify-content: flex-start;
+}
+
+/* Header banner */
+.header-banner {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 80vh;
+}
+
+.header-banner {
+  position: relative;
+  height: 500px;
+}
+
+.header-banner img {
+  width: 100%;
+  height: 100%;
+}
+
+.header-banner h1 {
+  font-size: 35px;
+  color: #f8f3f3;
+}
+
+.header-banner h4 {
+  color: #f8f3f3;
+  font-size: 18px;
+}
+/* Head banner End */
+
+/* Room Search */
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 20px;
+  margin-left: 45px;
+}
+
+.search-field {
+  flex: 0 0 calc(25% - 10px);
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #666;
+}
+
+.search-field input,
+.search-field select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+div.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.home-search-button {
+  margin-left: 10px;
+  padding: 15px 20px;
+  background-color: #007F86;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.home-search-button:hover {
+  background-color: rgb(34, 80, 128)
+}
+
+/* Room Search Component Result hom Page Styling */
+.room-results {
+  display: block;
+  flex-wrap: wrap;
+  margin: 10px 30px;
+}
+
+.room-list-item {
+  width: calc(95% -20px);
+  height: 20vh;
+  margin: 5px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Home services section */
+.home-services {
+  font-weight: 800;
+  color: #007F86;
+  text-align: center;
+  margin: 5px auto 30px auto;
+}
+
+.maru-color {
+  color: #FF007F;
+  color: #FF7F50;
+}
+
+.service-section {
+  margin: 0px 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  flex: 1 1 45%;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+}
+
+.service-card img {
+  width: 10%;
+  margin-right: 10px;
+}
+
+.service-details {
+  flex: 1;
+}
+
+.service-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 900;
+  color: #007F86;
+}
+
+.service-description {
+  color: #444;
 }
