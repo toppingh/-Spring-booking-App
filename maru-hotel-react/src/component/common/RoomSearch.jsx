@@ -14,7 +14,7 @@ const RoomSearch = ({ handleSearchResult }) => {
     useEffect(() => {
         const fetchRoomTypes = async () => {
             try {
-                const types = await ApiService.getAllRoomTypes();
+                const types = await ApiService.getRoomTypes();
                 setRoomTypes(types);
             } catch (error) {
                 console.error(`Error fetching room types: ${error.message}`);
@@ -46,7 +46,7 @@ const RoomSearch = ({ handleSearchResult }) => {
             const response = await ApiService.getAvailableRoomsByDatedAndType(formattedStartDate, formattedEndDate, roomType);
 
             // Check if the response is successful
-            if (response.statusCode == 200) {
+            if (response.statusCode === 200) {
                 if (response.roomList.length === 0) {
                     showError(`현재 선택하신 객실 유형은 해당 날짜에 예약이 불가능합니다.`);
                     return

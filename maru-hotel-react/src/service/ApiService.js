@@ -35,7 +35,7 @@ export default class ApiService {
         return response.data;
     }
 
-    static async getuserProfile() {
+    static async getUserProfile() {
         const response = await axios.get(`${this.BASE_URL}/users/get-logged-in-profile-info`, {
             headers: this.getHeader()
         });
@@ -94,7 +94,7 @@ export default class ApiService {
     }
 
     // Get all room types from the database
-    static async getAllRoomTypes() {
+    static async getRoomTypes() {
         const result = await axios.get(`${this.BASE_URL}/rooms/types`);
         return result.data;
     }
