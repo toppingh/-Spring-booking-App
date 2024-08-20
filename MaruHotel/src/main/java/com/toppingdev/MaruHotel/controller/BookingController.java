@@ -22,7 +22,7 @@ public class BookingController {
                                                  @PathVariable Long userId,
                                                  @RequestBody Booking bookingRequest) {
 
-        Response response = bookingService.saveBooking(userId, roomId, bookingRequest);
+        Response response = bookingService.saveBooking(roomId, userId, bookingRequest);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 

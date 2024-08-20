@@ -16,7 +16,7 @@ const RoomResult = ({ roomSearchResults }) => {
                             <div className="room-details">
                                 <h3>{room.roomType}</h3>
                                 <p>금액 : ${room.roomPrice} / night</p>
-                                <p>상세정보 : ${room.roomDescription}</p>
+                                <p>상세정보 : {room.roomDescription}</p>
                             </div>
 
                             <div className="book-now-div">

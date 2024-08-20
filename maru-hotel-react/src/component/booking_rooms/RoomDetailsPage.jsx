@@ -99,6 +99,7 @@ const RoomDetailsPage = () => {
 
             // Make booking
             const response = await ApiService.bookRoom(roomId, userId, booking);
+            console.log(`예약자 : ${userId}, 방 : ${roomId}`);
 
             if (response.statusCode === 200) {
                 setConfirmationCode(response.bookingConfirmationCode);

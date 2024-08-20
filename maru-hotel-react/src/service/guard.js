@@ -16,7 +16,7 @@ export const AdminRoute = ({element: Component}) => {
     const location = useLocation();
 
     return ApiService.isAdmin() ? (
-        <Component />
+        Component
     ) : (
         <Navigate to="/login" replace state={{ from: location }} />
     )
