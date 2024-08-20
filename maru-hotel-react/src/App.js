@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -12,6 +11,8 @@ import { ProtectedRoute } from './service/guard';
 import RoomDetailsPage from './component/booking_rooms/RoomDetailsPage';
 import LoginPage from './component/auth/LoginPage';
 import RegisterPage from './component/auth/RegisterPage';
+import ProfilePage from './component/profile/ProfilePage';
+import EditProfilePage from './component/profile/EditProfilePage';
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
             {/* Protected Routes */}
             <Route exact path='/room-details-book/:roomId' 
             element={<ProtectedRoute element={RoomDetailsPage} />}/>
+            <Route exact path='/profile' 
+            element={<ProtectedRoute element={ProfilePage} />} />
+            <Route exact path='/edit-profile'
+            element={<ProtectedRoute element={EditProfilePage} />} />
 
             
             
