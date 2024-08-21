@@ -51,9 +51,9 @@ function RegisterPage() {
                 });
                 setSuccessMessage("회원가입이 완료되었습니다.");
                 setTimeout(() => {
-                    setSuccessMessage('');
-                    navigate('/');
-                }, 3000);
+                    setSuccessMessage('회원가입이 완료되었습니다.');
+                    navigate('/login');
+                }, 2000);
             }
         }
         catch (error) {

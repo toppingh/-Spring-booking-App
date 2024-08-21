@@ -108,7 +108,7 @@ const RoomDetailsPage = () => {
                 setTimeout(() => {
                     setShowMessage(false);
                     navigate("/rooms");
-                }, 10000);
+                }, 1000);
             }
         } catch (error) {
             setErrorMessage(error.response?.data?.message || error.message);
