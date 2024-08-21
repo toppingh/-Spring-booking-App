@@ -27,6 +27,7 @@ const EditRoomPage = () => {
                     roomPrice: response.room.roomPrice,
                     roomDescription: response.room.roomDescription,
                 });
+                console.log("get : ", response); // 확인
             } catch (error) {
                 setError(error.response?.data?.message || error.message);
             }
@@ -65,6 +66,7 @@ const EditRoomPage = () => {
             }
 
             const result = await ApiService.updateRoom(roomId, formData);
+            console.log(`result : ${result}`);
             if (result.statusCode === 200) {
                 setSuccess("성공적으로 수정되었습니다.");
 
@@ -120,11 +122,20 @@ const EditRoomPage = () => {
                     />
                 </div>
                 <div className='form-group'>
+                    <label>객실 유형</label>
+                    <input 
+                        type='text'
+                        name='roomType'
+                        value={roomDetails.roomType}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className='form-group'>
                     <label>객실 금액</label>
                     <input 
                         type='text'
-                        name='romPrice'
-                        value={roomDetails.romPrice}
+                        name='roomPrice'
+                        value={roomDetails.roomPrice}
                         onChange={handleChange}
                     />
                 </div>

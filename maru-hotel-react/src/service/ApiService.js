@@ -121,7 +121,7 @@ export default class ApiService {
 
     // Updates a room
     static async updateRoom(roomId, formData) {
-        const result = await axios.put(`${this.BASE_URL}/rooms/upadate/${roomId}`, formData, {
+        const result = await axios.put(`${this.BASE_URL}/rooms/update/${roomId}`, formData, {
             headers: {
                 ...this.getHeader(),
                 "Content-Type": "multipart/form-data"
@@ -158,7 +158,7 @@ export default class ApiService {
 
     // To cancel user booking
     static async cancelBooking(bookingId) {
-        const response = await axios.get(`${this.BASE_URL}/bookings/cancel/${bookingId}`, {
+        const response = await axios.delete(`${this.BASE_URL}/bookings/cancel/${bookingId}`, {
             headers: this.getHeader()
         });
         return response.data;

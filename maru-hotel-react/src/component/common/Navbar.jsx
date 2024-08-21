@@ -10,7 +10,7 @@ function Navbar() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        const isLogout = window.confirm("Are you sure you really want to logout?");
+        const isLogout = window.confirm("로그아웃 하시겠습니까?");
         if (isLogout) {
             ApiService.logout();
             navigate("/home");
@@ -33,7 +33,7 @@ function Navbar() {
                 { !isAuthenticated && <li><NavLink to="/login" activeclassname="active">로그인</NavLink></li>}
                 { !isAuthenticated && <li><NavLink to="/register" activeclassname="active">회원가입</NavLink></li>}
 
-                { isAuthenticated &&<li onClick={handleLogout}>Logout</li>}
+                { isAuthenticated &&<li onClick={handleLogout}>로그아웃</li>}
             </ul>
         </nav>
     )
